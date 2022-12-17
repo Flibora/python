@@ -10,5 +10,6 @@ new_list = [1, 1]
 
 for i in range(0, 13):
     new_list.append(new_list[-1] + new_list[-2])
+    #добавляет сумму двух предыдущих элементов списка в новый элемент списка
 
 print(new_list)

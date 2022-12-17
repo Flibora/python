@@ -13,11 +13,17 @@ for i in range(n):
 
 print(spisok)
 
-spisok.sort(reverse=True)
-print(spisok)
+# spisok.sort(reverse=True)
+# print(spisok)
+max_el = 0
+for i in spisok:
+    if i > max_el:
+        max_el = i
+
+print(max_el)
 
 for j in range(len(spisok)):
     if not spisok[j] % 2:
-        spisok[j] = spisok[0]
+        spisok[j] = max_el
 
 print(spisok)

@@ -2,10 +2,10 @@
 # вычисления суммы S=1+1/2+1/3+1/4+...+1/N, где N –
 # натуральное число.
 
-N = abs(int(input()))
-S = 1
+n = int(input())
+s = 1
 
-for i in range(2, N +1):
-    S += 1/i
+for i in range(2, n +1):
+    s += 1/i
 
-print(S)
+print(s)

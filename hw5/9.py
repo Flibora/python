@@ -14,5 +14,7 @@ m = int(input())
 
 for num in range(n, m + 1):
     spisok_del = [x for x in range(1, num//2 + 1) if num % x == 0]
+    #доюавляет значение х в список, если делении num на х без остатка в
+    #промежутке от 1 до половины num
     spisok_del.remove(1)
     print(f"{num} : {spisok_del}")

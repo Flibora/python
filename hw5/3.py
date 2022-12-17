@@ -1,6 +1,6 @@
 #Дано число. На ти сумму и произведение его цифр.
 
-num = str(input())
+num = input()
 sum = 0
 mult = 1
 for i in num:
