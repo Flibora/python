@@ -2,6 +2,7 @@
 # элементов. Определить количество участков списка,
 # на котором элементы монотонно возрастают (каждое
 # следующее число больше предыдущего).
+
 import random
 
 sum = 0
@@ -14,10 +15,13 @@ for i in range(n):
 
 print(list_n)
 
-for i in range(n):
-    if i == n - 1:
-        break
-    elif list_n[i] < list_n[i+1]:
-        sum +=1
-
-print(sum)
+count = 0
+flag = True
+for i in range(1,n):
+    if list_n[i-1] < list_n[i] :
+        if flag:
+            count += 1
+            flag = False
+    else :
+        flag = True
+print(count)

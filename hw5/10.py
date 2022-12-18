@@ -5,30 +5,46 @@
 # минут. (Примечание: использовать возможности
 # библиотеки datetime).
 
-import datetime
-
-need_time = datetime.time(7, 30)
-lsit_zap = []
+from datetime import datetime
+new_list = []
 list_rw = [{
-     'train' : 'Andrew',
      'number' : 1584,
-     'time' : datetime.time(7, 30)},
+     'from' : 'Minsk',
+     'to' : 'Berlin',
+     'departure' : datetime(2021, 1, 7, 12, 30, 40),
+     'arrival' : datetime(2021, 1, 8, 11, 22, 35)
+     },
      {
      'train' : 'Stuwie',
      'number' : 1695,
-     'time' : datetime.time(6, 15)},
+     'from' : 'Minsk',
+     'to' : 'Brest',
+     'departure' : datetime(2021, 1, 7, 10, 15, 14),
+     'arrival' : datetime(2021, 1, 7, 14, 17, 32)
+     },
      {
      'train' : 'Brandon',
      'number' : 1555,
-     'time' : datetime.time(4, 30)},
+     'from' : 'Minsk',
+     'to' : 'Kiev',
+     'departure' : datetime(2021, 1, 6, 19, 26, 16),
+     'arrival' : datetime(2021, 1, 7, 10, 55, 16)
+     },
      {
      'train' : 'Andrew',
      'number' : 1584,
-     'time' : datetime.time(8, 30)}
+     'from' : 'Minsk',
+     'to' : 'Ghomel',
+     'departure' : datetime(2021, 1, 5, 10, 44, 17),
+     'arrival' : datetime(2021, 1, 5, 14, 13, 24)
+     }
      ]
 
 for list in list_rw:
-    if list_rw[list]['time'] > need_time:
-        list_zap.append(list_rw())
+    x = list['arrival'] - list['departure']
+    print(x)
+    if x < datetime.time(7, 30):
+        new_list.append(list)
 
-print(list_zap)
+
+# print(new_list)
