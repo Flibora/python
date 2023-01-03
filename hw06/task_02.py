@@ -17,21 +17,20 @@ while True:
     punkt = int(input())
     print('Введите значение')
     chislo = int(input())
+    list = [
+    task_01.convSmToInches(chislo),
+    task_01.convInchesToSm(chislo),
+    task_01.convMilesToKilometers(chislo),
+    task_01.convKiometrsToMiles(chislo),
+    task_01.convFuntsToKilograms(chislo),
+    task_01.convKilogramsToFunts(chislo),
+    task_01.convUnciiToGrams(chislo),
+    task_01.convGramsToUncii(chislo),
+    task_01.convGallonsToLitres(chislo),
+    task_01.convLitresToGallons(chislo),
+    task_01.convLitresToPinta(chislo),
+    task_01.convPintToLitres(chislo)]
     if  1<= punkt <= 12:
-        list = [
-        task_01.convSmToInches(chislo),
-        task_01.convInchesToSm(chislo),
-        task_01.convMilesToKilometers(chislo),
-        task_01.convKiometrsToMiles(chislo),
-        task_01.convFuntsToKilograms(chislo),
-        task_01.convKilogramsToFunts(chislo),
-        task_01.convUnciiToGrams(chislo),
-        task_01.convGramsToUncii(chislo),
-        task_01.convGallonsToLitres(chislo),
-        task_01.convLitresToGallons(chislo),
-        task_01.convLitresToPinta(chislo),
-        task_01.convPintToLitres(chislo)
-    ]
         print(list[punkt-1])
     elif punkt == 0:
         break
