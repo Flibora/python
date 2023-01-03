@@ -1,52 +1,40 @@
-def convSmToInches(chislo):
-    convert = chislo * 0.39
-    return convert
+from typing import Union
 
-def convInchesToSm(chislo):
-    convert = chislo * 2.54
-    return convert
+def convSmToInches(chislo: Union[int, float]) -> float:
+    return chislo * 0.39
 
-def convMilesToKilometers(chislo):
-    convert =  chislo * 1.609344
-    return convert
+def convInchesToSm(chislo: Union[int, float]) -> float:
+    return chislo * 2.54
 
-def convKiometrsToMiles(chislo):
-    convert = chislo * 0.621371
-    return convert
+def convMilesToKilometers(chislo: Union[int, float]) -> float:
+    return chislo * 1.609344
 
-def convFuntsToKilograms(chislo):
-    convert = chislo * 0.45359237
-    return convert
+def convKiometrsToMiles(chislo: Union[int, float]) -> float:
+    return chislo * 0.621371
 
-def convKilogramsToFunts(chislo):
-    convert = chislo * 2.20462262185
-    return convert
+def convFuntsToKilograms(chislo: Union[int, float]) -> float:
+    return chislo * 0.45359237
 
-def convUnciiToGrams(chislo):
-    convert = chislo * 28.34952
-    return convert
+def convKilogramsToFunts(chislo: Union[int, float]) -> float:
+    return chislo * 2.20462262185
 
-def convGramsToUncii(chislo):
-    convert = chislo / 28.34952
-    return convert
+def convUnciiToGrams(chislo: Union[int, float]) -> float:
+    return chislo * 28.34952
 
-def convGallonsToLitres(chislo):
-    convert = chislo * 0.264172
-    return convert
+def convGramsToUncii(chislo: Union[int, float]) -> float:
+    return chislo / 28.34952
 
-def convLitresToGallons(chislo):
-    convert = chislo * 3.785412
-    return convert
+def convGallonsToLitres(chislo: Union[int, float]) -> float:
+    return chislo * 0.264172
 
-def convLitresToPinta(chislo):
-    convert = chislo * 0.5683
-    return convert
+def convLitresToGallons(chislo: Union[int, float]) -> float:
+    return chislo * 3.785412
 
-def convPintToLitres(a):
-    convert = a * 0.473176
-    return convert
+def convLitresToPinta(chislo: Union[int, float]) -> float:
+    return chislo * 0.5683
 
+def convPintToLitres(chislo: Union[int, float]) -> float:
+    return chislo * 0.473176
 
-
-
-print(convPintToLitres(5))
+if __name__ == "__main__":
+    print("hello")
