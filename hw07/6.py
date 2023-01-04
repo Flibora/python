@@ -5,11 +5,8 @@
 
 
 def main():
-    dict = ['dsfs': 3, 'fdg2r': 34, 'erqwe': 432]
-    print(map((lambda **x: {k*2: v for k, v in x.items()})(dict)))
-    # print((lambda **x: {k*2: v for k, v in x.items()})
-
-
+    my_func = lambda **x: {k*2: v for k, v in x.items()}
+    print(my_func(maks='lopuh', chitat='vnimatelno'))
 
 if __name__ == "__main__":
     main()

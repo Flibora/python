@@ -11,15 +11,15 @@ def convert(num: int) -> str:
     while num > 0:
         binary_num += str(num % 2)
         num = num // 2
+    binary_num =binary_num[::-1]
     return binary_num
 
 def main():
     while True:
         number = int(input())
-        if not number == 0 :
-            print(convert(number))
-        else:
+        if not number :
             return
+        print(convert(number))
 
 if __name__ == "__main__":
     main()

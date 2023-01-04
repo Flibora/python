@@ -5,7 +5,10 @@
 # распознавать слова палиндромы.)
 
 def palindrom(words):
-    return list(filter(lambda name: name == name[::-1], words))
+    x = list(filter(lambda name: name == name[::-1], words))
+    if x:
+        return print(f'Есть слова палиндромы , {x}')
+    return print('нет слов')
 
 
 def main():

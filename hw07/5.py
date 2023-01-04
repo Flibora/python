@@ -9,7 +9,7 @@ def main():
     # print(new_list)
 
     list_str = ['fdgdf', 'jfdgkw', 'jidfgjow']
-    new_list = [f'{list_str.index(x)} - {x}' for x in list_str]
+    new_list = [f'{x} - {y}' for x, y in enumerate(list_str)]
     print(new_list)
 
 
