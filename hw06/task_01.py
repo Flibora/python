@@ -62,7 +62,19 @@ def convPintToLitres(chislo: Union[int, float]) -> float:
 
 def main():
     """The main module of the program"""
-
+    list = [
+    convSmToInches,
+    convInchesToSm,
+    convMilesToKilometers,
+    convKiometrsToMiles,
+    convFuntsToKilograms,
+    convKilogramsToFunts,
+    convUnciiToGrams,
+    convGramsToUncii,
+    convGallonsToLitres,
+    convLitresToGallons,
+    convLitresToPinta,
+    convPintToLitres]
     while True:
         print('Выберите варинаты конвертирования:')
         print("1.Сантиметры в дюймы\n"
@@ -80,19 +92,6 @@ def main():
         punkt = int(input())
         print('Введите значение')
         chislo = int(input())
-        list = [
-        convSmToInches,
-        convInchesToSm,
-        convMilesToKilometers,
-        convKiometrsToMiles,
-        convFuntsToKilograms,
-        convKilogramsToFunts,
-        convUnciiToGrams,
-        convGramsToUncii,
-        convGallonsToLitres,
-        convLitresToGallons,
-        convLitresToPinta,
-        convPintToLitres]
         if  1<= punkt <= 12:
             print(list[punkt-1](chislo))
         elif punkt == 0:
