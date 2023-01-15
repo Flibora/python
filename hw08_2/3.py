@@ -20,7 +20,10 @@ def read_file(filecsv):
         for row in csvreader:
             rows.append(row)
         return fields, rows
+<<<<<<< HEAD
 
+=======
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
 def sorted_list(fields, rows):
     sorted_fields = fields.pop(-1)
     temp_sorted = sorted(rows, key = lambda list: int(list[2]))
@@ -30,23 +33,32 @@ def sorted_list(fields, rows):
     for key in sorted_list:
         print(key)
     return sorted_fields, sorted_list
+<<<<<<< HEAD
 
+=======
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
 def write_csv(filename, fields, rows):
     with open(filename, 'w') as file:
         csvwriter = csv.writer(file)
         csvwriter.writerow(fields)
         csvwriter.writerows(rows)
+<<<<<<< HEAD
 
+=======
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
 def sorted_minsk(rows):
     list_minsk = []
     for key in rows:
         if key[1] == "Minsk":
             list_minsk.append(key)
     return list_minsk
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
 def main():
     fields, rows =read_file('statistics.csv')
     sorted_fields, sorted_rows = sorted_list(fields, rows)

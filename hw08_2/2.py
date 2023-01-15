@@ -6,7 +6,11 @@
 
 import csv
 
+<<<<<<< HEAD
 def sorted_list(rows):
+=======
+def sorted_list(fields, rows):
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
     ages_categ = [0,0,0,0,0]
     for row in rows:
         if int(row[2]) <= 12:
@@ -50,11 +54,23 @@ def prepare_csv_data(fields, rows):
     return list_fields, list_rows
 
 
+<<<<<<< HEAD
 def main():
     file_fields, file_rows = read_csv('file_csv.csv')
     ages_list = sorted_list(file_rows)
     new_fields = ['1-12', '13-18', '19-25', '26-40', '40+']
     write_csv('sorted_file.csv', new_fields, ages_list)
+=======
+
+
+
+def main():
+
+    file_fields, file_rows = read_csv('file_csv.csv')
+    ages_list = sorted_list(file_fields, file_rows)
+    new_fields = '1-12,13-18,19-25,26-40,40+'
+    write_csv('sorted_file.csv', new_fields.split(','), ages_list)
+>>>>>>> f59b9ae5d6b520adb7ed857b49fe39633bd0cfd6
 
 
 if __name__ == '__main__':
