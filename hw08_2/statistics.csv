@@ -1,4 +1,4 @@
-date,city,temperature,windspeed
+date,city,temperature,wind_speed
 12/03/2022,Minsk,12,4
 15/03/2022,Vitebsk,13,8
 13/03/2022,Minsk,13,5

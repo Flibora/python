@@ -5,7 +5,6 @@
 
 from datetime import datetime
 
-
 def main():
     dates = []
     with open ('time.txt', 'r') as textfile:
