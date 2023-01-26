@@ -11,54 +11,43 @@
 
 
 import csv
-
-def read_file(filecsv):
-    rows = []
-    with open(filecsv, 'r') as file:
-        csvreader = csv.reader(file)
-        fields = next(csvreader)
-        for row in csvreader:
-            rows.append(row)
-        return fields, rows
+import write_read_csv
 
 def sorted_list(fields, rows):
-    sorted_fields = fields.pop(-1)
-    temp_sorted = sorted(rows, key = lambda list: int(list[2]))
-    sorted_list = []
-    for keys in temp_sorted:
-        sorted_list.append(keys[0:3])
-    for key in sorted_list:
-        print(key)
-    return sorted_fields, sorted_list
+    sorted_fields = fields[1:-1]
+    filt_minsk = list(filter(lambda row: row[1] == 'Minsk',rows))
+    filt_pinsk = list(filter(lambda row: row[1] == 'Pinsk',rows))
+    filt_vitebsk = list(filter(lambda row: row[1] == 'Vitebsk',rows))
+    return sorted_fields,filt_minsk, filt_pinsk, filt_vitebsk
 
-def write_csv(filename, fields, rows):
-    with open(filename, 'w') as file:
-        csvwriter = csv.writer(file)
+def average_city_info(rows):
+    average_temp= 0
+    average_speed = 0
+    for row in rows:
+        average_temp+=int(row[2])
+        average_speed+=int(row[3])
+        if row == rows[-1]:
+            average_temp/= len(rows)
+            average_speed/= len(rows)
+    return average_temp, average_speed
+
+def write_info_csv(filename, fields, rows):
+    with open(filename, 'w') as csvfile:
+        csvwriter = csv.writer(csvfile)
         csvwriter.writerow(fields)
         csvwriter.writerows(rows)
 
-def sorted_minsk(rows):
-    list_minsk = []
-    for key in rows:
-        if key[1] == "Minsk":
-            list_minsk.append(key)
-    return list_minsk
-
 def main():
-    fields, rows =read_file('statistics.csv')
-    sorted_fields, sorted_rows = sorted_list(fields, rows)
-    write_csv('temp_file.csv', fields, sorted_rows)
-    minsk_rows = sorted_minsk(rows)
-    average_temp = 0
-    average_speed = 0
-    for row in minsk_rows:
-        average_temp+= int(row[2])
-        average_speed+= int(row[3])
-        if row == minsk_rows[-1]:
-             average_temp/= len(minsk_rows)
-             average_speed/= len(minsk_rows)
-    print(f"Средняя температура по Минску за 7дней: {int(average_temp)}\n"
-          f"Средняя скорость ветра по Минску за 7дней: {int(average_speed)}")
+    fields, rows =write_read_csv.read_csv('statistics.csv')
+    sorted_fields, minsk, pinsk, vitebsk = sorted_list(fields, rows)
+    minsk_temp, minsk_wind = average_city_info(minsk)
+    pinsk_temp, pinsk_wind = average_city_info(pinsk)
+    vitebsk_temp, vitebsk_wind = average_city_info(vitebsk)
+    sorted_rows = [["Minsk", int(minsk_temp)], ["Pinsk", int(pinsk_temp)],
+                   ["Vitebsk", int(vitebsk_temp)]]
+    write_info_csv('info_temp.csv', sorted_fields, sorted_rows)
+    print(f"Средняя температура по Минску за 7дней: {int(minsk_temp)}\n"
+          f"Средняя скорость ветра по Минску за 7дней: {int(minsk_wind)}")
 
 
 if __name__ == '__main__':
