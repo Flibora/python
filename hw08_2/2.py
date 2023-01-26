@@ -1,0 +1,37 @@
+# Создать CSV фа л с данными следующе структуры:
+# Имя, Фамилия, Возраст. Создать отчетны фа л в
+# формате CSV с информацие по количеству люде
+# входящих в ту или иную возрастную группу.
+# Возрастные группы: 1-12, 13-18, 19-25, 26-40, 40+.
+
+import csv
+import write_read_csv
+
+def sorted_list(rows):
+    ages_categ = [0,0,0,0,0]
+    for row in rows:
+        if int(row[2]) <= 12:
+            ages_categ[0] += 1
+        elif int(row[2])>=13 and int(row[2])<=18:
+            ages_categ[1] += 1
+        elif int(row[2])>=19 and int(row[2])<=25:
+            ages_categ[2] += 1
+        elif int(row[2])>=26 and int(row[2])<=40:
+            ages_categ[3] +=1
+        else: ages_categ[4]+=1
+    return ages_categ
+
+def write_sotred_csv(filename, rows):
+    with open(filename, 'w') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerows(rows)
+
+def main():
+    file_fields, file_rows = write_read_csv.read_csv('file_csv.csv')
+    ages_list = sorted_list(file_rows)
+    new_fields = ['1-12', '13-18', '19-25', '26-40', '40+']
+    write_read_csv.write_csv('sorted_file.csv', new_fields, ages_list)
+
+
+if __name__ == '__main__':
+    main()
